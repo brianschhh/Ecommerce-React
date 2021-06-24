@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+// COMPONENTS
+import Header from "./components/Header/Header";
+import Nav from "./components/Nav/Nav";
+//VIEWS
+import Electronics from "./views/Electronics/Electronics"
+import Home from "./views/Home/Home";
+import Jewelery from "./views/Jewelery/Jewelery"
+import MenCloth from "./views/MenCloth/MenCloth"
+import WomenCloth from "./views/WomenCloth/WomenCloth"
+import ItemDetail from "./views/ItemDetail/ItemDetail";
+
+
+// REACT-ROUTER-DOM
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import "./App.css";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Router>
+    <div className="App__container">
+      <Header />
+      <Nav />
+      <Switch>
+        <Route path='/'  exact component={Home} />
+        <Route path='/electronics' component={Electronics} />
+        <Route path="/jewelery" component={Jewelery} />
+        <Route path="/MenCloth" component={MenCloth} />
+        <Route path='/womencloth' component={WomenCloth} />
+        <Route path='/detail/:id' component={ItemDetail} />
+
+      </Switch>
     </div>
+    </Router>
   );
 }
 

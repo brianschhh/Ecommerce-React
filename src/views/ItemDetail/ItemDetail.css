@@ -1,0 +1,12 @@
+.Item__container{
+    margin-top: 10px;
+    max-height: 2500px;
+}
+
+.date {
+    font-size: xx-large;
+}
+
+.description {
+    margin-bottom: 30px;
+}
