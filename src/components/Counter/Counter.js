@@ -1,36 +1,39 @@
 import React, { useState } from "react";
 import { Button } from "semantic-ui-react";
 import "./Counter.css";
+import { Link } from "react-router-dom";
 
-function Counter() {
-  let min = 1;
-  let max = 10;
-  const [counter, setCounter] = useState(min);
+function Counter({ min, max, onAdd }) {
+  const [counter, setCounter] = useState(parseInt(min));
 
-  function counterUp() {
-    const newValue = counter + 1;
-    if (newValue <= max) {
-      setCounter(newValue);
-    }
-  }
+  const counterUp = () => {
+    setCounter(counter + 1);
+  };
 
-  function counterDown() {
-    const newValue = counter - 1;
-    if (newValue >= min) {
-      setCounter(newValue);
-    }
-  }
+  const counterDown = () => {
+    setCounter(counter - 1);
+  };
 
   return (
     <div>
       <div className="SectionCounter">
-        <Button primary onClick={counterDown}>
+        <Button primary disabled={counter <= 1} onClick={counterDown}>
           -
         </Button>
         <span className="span"> {counter} </span>
-        <Button primary onClick={counterUp}>
+        <Button primary onClick={counterUp} disabled={counter >= max}>
           +
         </Button>
+        <Link to="/cart">
+          <Button
+            size="Medium"
+            inverted
+            color="red"
+            onClick={() => onAdd(counter)}
+          >
+            Add to Cart
+          </Button>
+        </Link>
       </div>
     </div>
   );

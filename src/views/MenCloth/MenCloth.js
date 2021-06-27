@@ -5,58 +5,48 @@ import { Card, Image, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 function MenCloth() {
-    const [mencloth, setMencloth] = useState([]);
+  const [mencloth, setMencloth] = useState([]);
 
-    useEffect(() => {
-      axios("https://fakestoreapi.com/products/category/men's%20clothing").then(
-        (resp) => {
-          setMencloth(resp.data);
-          console.log("MenCloth", resp.data);
-        }
-      );
-    }, []);
-
-    const [item, setItem] = useState([]);
-
-    useEffect(() => {
-      axios.get("https://fakestoreapi.com/products").then((res) => {
-        setItem(res.data);
-        console.log(res.data);
-      });
-    }, []);
-
-    return (
-      <div className="itemList__container">
-        <div className="itemlist__grid">
-          {mencloth.map((men) => {
-            return (
-              <div className="Item__container">
-                <Link to={`/detail/${men.id}`}>
-              <Card>
-                <Image src={men.image} size="small" wrapped centered />
-                <Card.Content>
-                  <Card.Header>{men.title}</Card.Header>
-                  <Card.Meta>
-                    <span className="date">
-                      <span>$</span>
-                      {men.price}
-                    </span>
-                  </Card.Meta>
-                  <Card.Content>
-                    <Button size="Medium" color="black" inverted color="red">
-                      Details
-                    </Button>
-                  </Card.Content>
-                </Card.Content>
-              </Card>
-              </Link>
-              </div>
-            );
-          })}
-        </div>
-      </div>
+  useEffect(() => {
+    axios("https://fakestoreapi.com/products/category/men's%20clothing").then(
+      (resp) => {
+        setMencloth(resp.data);
+        console.log("MenCloth", resp.data);
+      }
     );
-  }
-  
+  }, []);
 
-export default MenCloth
+  return (
+    <div className="itemList__container">
+      <div className="itemlist__grid">
+        {mencloth.map((men) => {
+          return (
+            <div className="Item__container">
+              <Link to={`/detail/${men.id}`}>
+                <Card>
+                  <Image src={men.image} size="small" wrapped centered />
+                  <Card.Content>
+                    <Card.Header>{men.title}</Card.Header>
+                    <Card.Meta className="date">
+                      <span className="date">
+                        <span>$</span>
+                        {men.price}
+                      </span>
+                    </Card.Meta>
+                    <Card.Content>
+                      <Button size="Medium" inverted color="red">
+                        Details
+                      </Button>
+                    </Card.Content>
+                  </Card.Content>
+                </Card>
+              </Link>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+export default MenCloth;

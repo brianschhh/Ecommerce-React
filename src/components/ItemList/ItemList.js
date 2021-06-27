@@ -17,14 +17,14 @@ function ItemList() {
   return (
     <div className="itemList__container">
       <div className="itemlist__grid">
-      {item.map((it) => {
-        return (
-          <Link to={`/detail/${it.id}`}>
-            <Item item={it} key={it.id} />
-          </Link>
-        );
-      })}
-    </div>
+        {item.map((it) => {
+          return (
+            <Link to={`/detail/${it.id}`}>
+              <Item item={it} key={it.id} />
+            </Link>
+          );
+        })}
+      </div>
     </div>
   );
 }

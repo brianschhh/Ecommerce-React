@@ -1,29 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./Nav.css";
-import axios from "axios";
 import { Link } from "react-router-dom";
 import { Button } from "semantic-ui-react";
-import Icon from "../icon/icon"
+import Icon from "../icon/icon";
 
 function Nav() {
-  const [categories, setCategories] = useState([]);
-
-  useEffect(() => {
-    axios("https://fakestoreapi.com/products/categories").then((resp) => {
-      setCategories(resp.data);
-      console.log("cateories", resp.data);
-    });
-  }, []);
   return (
     <div className="Nav__container">
       <Link to="/">
-        <Button
-          size="Medium"
-          color="black"
-          inverted
-          color="red"
-          style={{marginTop:"5px" }}
-        >
+        <Button size="Medium" inverted color="red" style={{ marginTop: "5px" }}>
           home
         </Button>
       </Link>
@@ -49,7 +34,7 @@ function Nav() {
           </Link>
         </li>
       </ul>
-      <Icon/>
+      <Icon />
     </div>
   );
 }

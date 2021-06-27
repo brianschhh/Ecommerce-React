@@ -1,12 +1,17 @@
-.Item__container{
-    margin-top: 10px;
-    max-height: 2500px;
+.Item__container {
+  margin-top: 10px;
+  max-height: 2500px;
 }
 
 .date {
-    font-size: xx-large;
+  font-size: xx-large;
 }
 
 .description {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+.container__Date {
+  margin-top: 15px;
+  margin-bottom: 10px;
 }

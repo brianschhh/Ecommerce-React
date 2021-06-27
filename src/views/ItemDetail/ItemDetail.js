@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { Card, Image, Button } from "semantic-ui-react";
+import { Card, Image } from "semantic-ui-react";
 import axios from "axios";
 import "./ItemDetail.css";
+import Counter from "../../components/Counter/Counter";
 
 function ItemDetail({ match }) {
-  console.log("matchhhh", match);
+  const onAdd = (counter) => {
+    console.log("agregar al carrito", counter);
+  };
+  //console.log("matchhhh", match);
   let itemID = match.params.id;
 
   const [items, setItems] = useState([]);
-  console.log("info", items);
+
+  //console.log("info", items);
 
   useEffect(() => {
     axios(`https://fakestoreapi.com/products/${itemID}`).then((res) =>
@@ -30,14 +35,7 @@ function ItemDetail({ match }) {
             </span>
           </Card.Meta>
         </Card.Content>
-        <Button
-          size="Medium"
-          color="black"
-          inverted
-          color="red"
-        >
-          BUY
-        </Button>
+        <Counter min={1} max={5} onAdd={onAdd} />
       </Card>
     </div>
   );

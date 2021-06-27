@@ -1,20 +1,25 @@
-.itemList__container{
-    display: flex;
-    justify-content: center;
-    width: 100%;
+.itemList__container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
-.itemlist__grid{
-    padding: 10px;
-  
+.itemlist__grid {
+  padding: 10px;
+
   display: grid;
   grid-template-columns: 300px 300px 300px 300px 300px;
   gap: 24px;
 }
 
 .Item__container {
-	display: flex;
-	justify-content: center;
-	max-height: 500px;
-	text-align: center;
+  display: flex;
+  justify-content: center;
+  max-height: 500px;
+  text-align: center;
+}
+
+.date {
+  margin-top: 15px;
+  margin-bottom: 10px;
 }

@@ -8,14 +8,14 @@ const Item = ({ item }) => (
       <Image src={item.image} size="small" wrapped centered />
       <Card.Content>
         <Card.Header>{item.title}</Card.Header>
-        <Card.Meta>
+        <Card.Meta className="date">
           <span className="date">
             <span>$</span>
             {item.price}
           </span>
         </Card.Meta>
-        <Card.Content >
-          <Button size="Medium" color="black" inverted color="red">
+        <Card.Content>
+          <Button size="medium" inverted color="red">
             Details
           </Button>
         </Card.Content>

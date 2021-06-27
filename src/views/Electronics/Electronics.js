@@ -16,20 +16,6 @@ function Electronics() {
     );
   }, []);
 
-
-
-  const [item, setItem] = useState([]);
-
-  useEffect(() => {
-    axios.get("https://fakestoreapi.com/products").then((res) => {
-      setItem(res.data);
-      console.log(res.data);
-    });
-  }, []);
-
-
-
-
   return (
     <div className="itemList__container">
       <div className="itemlist__grid">
@@ -37,24 +23,24 @@ function Electronics() {
           return (
             <div className="Item__container">
               <Link to={`/detail/${el.id}`}>
-            <Card>
-              <Image src={el.image} size="small" wrapped centered />
-              <Card.Content>
-                <Card.Header>{el.title}</Card.Header>
-                <Card.Meta>
-                  <span className="date">
-                    <span>$</span>
-                    {el.price}
-                  </span>
-                </Card.Meta>
-                <Card.Content>
-                  <Button size="Medium" color="black" inverted color="red">
-                    Details
-                  </Button>
-                </Card.Content>
-              </Card.Content>
-            </Card>
-            </Link>
+                <Card>
+                  <Image src={el.image} size="small" wrapped centered />
+                  <Card.Content>
+                    <Card.Header>{el.title}</Card.Header>
+                    <Card.Meta className="date">
+                      <span className="date">
+                        <span>$</span>
+                        {el.price}
+                      </span>
+                    </Card.Meta>
+                    <Card.Content>
+                      <Button size="Medium" inverted color="red">
+                        Details
+                      </Button>
+                    </Card.Content>
+                  </Card.Content>
+                </Card>
+              </Link>
             </div>
           );
         })}
