@@ -29,7 +29,7 @@ const Cart = () => {
               {cart.map((obj) => {
                 Total = obj.item.price * obj.cantidad + Total;
               })}
-              Total: $ {Total}
+              Total: us$ {Total}
             </span>
           </div>
 
@@ -43,7 +43,7 @@ const Cart = () => {
                 <div className="style__text">{item.item.title}</div>
                 <div className="style__text">x {item.cantidad} </div>
                 <div className="style__text">
-                  total : {item.cantidad * item.item.price}
+                  total: us$ {item.cantidad * item.item.price}
                 </div>
                 <div className="Container__Icon">
                   <button

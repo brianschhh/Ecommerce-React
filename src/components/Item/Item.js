@@ -13,7 +13,7 @@ const Item = ({ item }) => (
         <Card.Header>{item.title}</Card.Header>
         <Card.Meta className="date">
           <span className="date">
-            <span>$</span>
+            <span>us$ </span>
             {item.price}
           </span>
         </Card.Meta>

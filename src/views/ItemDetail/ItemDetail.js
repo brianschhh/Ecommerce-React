@@ -28,7 +28,7 @@ function ItemDetail({ match }) {
             <Card.Description>{items.description}</Card.Description>
             <Card.Meta className="container__Date">
               <span className="date">
-                <span>$</span>
+                <span>us$ </span>
                 {items.price}
               </span>
             </Card.Meta>

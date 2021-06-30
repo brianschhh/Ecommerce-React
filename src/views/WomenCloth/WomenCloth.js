@@ -30,7 +30,7 @@ function WomenCloth() {
                   <Card.Header>{wo.title}</Card.Header>
                   <Card.Meta className="date">
                     <span className="date">
-                      <span>$</span>
+                      <span>us$ </span>
                       {wo.price}
                     </span>
                   </Card.Meta>

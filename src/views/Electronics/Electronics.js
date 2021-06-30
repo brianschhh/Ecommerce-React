@@ -30,7 +30,7 @@ function Electronics() {
                   <Card.Header>{el.title}</Card.Header>
                   <Card.Meta className="date">
                     <span className="date">
-                      <span>$</span>
+                      <span>us$ </span>
                       {el.price}
                     </span>
                   </Card.Meta>

@@ -8,7 +8,7 @@ h1 {
   margin: 0 auto;
   justify-content: center;
   border: 1px solid red;
-  width: 500px;
+  width: 600px;
 }
 
 img {
@@ -19,7 +19,7 @@ img {
 
 .Container__Card {
   display: grid;
-  grid-template-columns: 150px 150px 30px 80px 20px;
+  grid-template-columns: 150px 150px 30px 150px 20px;
   gap: 4px;
 }
 

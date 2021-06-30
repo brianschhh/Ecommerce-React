@@ -30,7 +30,7 @@ function Jewelery() {
                   <Card.Header>{je.title}</Card.Header>
                   <Card.Meta className="date">
                     <span className="date">
-                      <span>$</span>
+                      <span>us$ </span>
                       {je.price}
                     </span>
                   </Card.Meta>
