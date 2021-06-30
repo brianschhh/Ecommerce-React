@@ -15,48 +15,55 @@ const Cart = () => {
     <>
       <div>
         <div>
-          <div className="container__TotalCLear">
-            <Button
-              size="Medium"
-              inverted
-              color="red"
-              style={{ marginTop: "5px" }}
-              onClick={clearCart}
-            >
-              Clear Cart
-            </Button>
+          <div className="container__h4">
             <h4 className="h4__Style">Cart</h4>
-            <span className="Total__Style">
-              {cart.map((obj) => {
-                Total = obj.item.price * obj.cantidad + Total;
-              })}
-              Total: us$ {Total.toFixed(2)}
-            </span>
           </div>
-
+          <Button
+            size="Medium"
+            inverted
+            color="red"
+            style={{
+              marginTop: "5px",
+            }}
+            onClick={clearCart}
+          >
+            Clear Cart
+          </Button>
           {cart.length === 0 && <Error />}
         </div>
-        {cart.map((item) => {
-          return (
-            <div className="Container__all">
-              <div className="Container__Card">
-                <img src={item.item.image} alt="" />
-                <div className="style__text">{item.item.title}</div>
-                <div className="style__text">x {item.cantidad} </div>
-                <div className="style__text">
-                  total: us$ {item.cantidad * item.item.price}
-                </div>
-                <div className="Container__Icon">
-                  <button
-                    onClick={() => removeItem(item.item.id, item.cantidad)}
-                  >
-                    <FontAwesomeIcon icon={faTimesCircle} />
-                  </button>
+        <div className="grid__Cart">
+          {cart.map((item) => {
+            return (
+              <div className="Container__all">
+                <div className="Container__Card">
+                  <img src={item.item.image} alt="" />
+                  <div className="style__text">{item.item.title}</div>
+                  <div className="style__text">x {item.cantidad} </div>
+                  <div className="style__text">
+                    total: us$ {item.cantidad * item.item.price}
+                  </div>
+                  <div className="Container__Icon">
+                    <button
+                      onClick={() => removeItem(item.item.id, item.cantidad)}
+                    >
+                      <FontAwesomeIcon icon={faTimesCircle} />
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+          <div>
+            {cart.length !== 0 && (
+              <span className="Total__Style">
+                {cart.map((obj) => {
+                  Total = obj.item.price * obj.cantidad + Total;
+                })}
+                Total: us$ {Total.toFixed(2)}
+              </span>
+            )}
+          </div>
+        </div>
       </div>
     </>
   );
