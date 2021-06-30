@@ -10,6 +10,7 @@ const Cart = () => {
   const { cart, removeItem, clearCart } = useCartContext();
   console.log("cart en cart", cart);
   let Total = 0;
+
   return (
     <>
       <div>
@@ -29,7 +30,7 @@ const Cart = () => {
               {cart.map((obj) => {
                 Total = obj.item.price * obj.cantidad + Total;
               })}
-              Total: us$ {Total}
+              Total: us$ {Total.toFixed(2)}
             </span>
           </div>
 
