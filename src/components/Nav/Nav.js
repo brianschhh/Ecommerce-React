@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Nav.css";
 import { Link } from "react-router-dom";
 import { Button } from "semantic-ui-react";
 import Icon from "../icon/icon";
+import { useCartContext } from "../../CartContex";
 
 function Nav() {
+  const { cantItems } = useCartContext();
   return (
     <div className="Nav__container">
       <Link to="/">
@@ -34,7 +36,9 @@ function Nav() {
           </Link>
         </li>
       </ul>
+
       <Icon />
+      <div className="Amount__container">{cantItems}</div>
     </div>
   );
 }

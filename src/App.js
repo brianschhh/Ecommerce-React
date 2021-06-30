@@ -1,4 +1,5 @@
 import React from "react";
+import { CartProvider } from "./CartContex";
 // COMPONENTS
 import Header from "./components/Header/Header";
 import Nav from "./components/Nav/Nav";
@@ -18,21 +19,23 @@ import "./App.css";
 
 function App() {
   return (
-    <Router>
-      <div className="App__container">
-        <Header />
-        <Nav />
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/electronics" component={Electronics} />
-          <Route path="/jewelery" component={Jewelery} />
-          <Route path="/MenCloth" component={MenCloth} />
-          <Route path="/womencloth" component={WomenCloth} />
-          <Route path="/detail/:id" component={ItemDetail} />
-          <Route path="/Cart" component={Cart} />
-        </Switch>
-      </div>
-    </Router>
+    <CartProvider>
+      <Router>
+        <div className="App__container">
+          <Header />
+          <Nav />
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/electronics" component={Electronics} />
+            <Route path="/jewelery" component={Jewelery} />
+            <Route path="/MenCloth" component={MenCloth} />
+            <Route path="/womencloth" component={WomenCloth} />
+            <Route path="/detail/:id" component={ItemDetail} />
+            <Route path="/Cart" component={Cart} />
+          </Switch>
+        </div>
+      </Router>
+    </CartProvider>
   );
 }
 

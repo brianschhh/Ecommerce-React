@@ -22,25 +22,27 @@ function Jewelery() {
         {jewel.map((je) => {
           return (
             <div className="Item__container">
-              <Link to={`/detail/${je.id}`}>
-                <Card>
+              <Card style={{ height: 450 }}>
+                <div className="Container__img">
                   <Image src={je.image} size="small" wrapped centered />
+                </div>
+                <Card.Content>
+                  <Card.Header>{je.title}</Card.Header>
+                  <Card.Meta className="date">
+                    <span className="date">
+                      <span>$</span>
+                      {je.price}
+                    </span>
+                  </Card.Meta>
                   <Card.Content>
-                    <Card.Header>{je.title}</Card.Header>
-                    <Card.Meta className="date">
-                      <span className="date">
-                        <span>$</span>
-                        {je.price}
-                      </span>
-                    </Card.Meta>
-                    <Card.Content>
+                    <Link to={`/detail/${je.id}`}>
                       <Button size="Medium" inverted color="red">
                         Details
                       </Button>
-                    </Card.Content>
+                    </Link>
                   </Card.Content>
-                </Card>
-              </Link>
+                </Card.Content>
+              </Card>
             </div>
           );
         })}

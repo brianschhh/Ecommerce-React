@@ -1,16 +1,17 @@
 .Item__container {
   display: flex;
   justify-content: center;
-  max-height: 500px;
-
+  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.5);
   text-align: center;
+  transition: all 0.2s ease-out;
 }
 
-img {
-  height: 10px;
+.Item__container:hover {
+  transform: scale(1.1);
 }
 
-.date {
-  margin-top: 15px;
-  margin-bottom: 10px;
+.Container__img {
+  height: 250px;
+  display: flex;
+  align-items: center;
 }

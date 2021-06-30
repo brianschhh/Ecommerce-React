@@ -22,25 +22,27 @@ function WomenCloth() {
         {womencloth.map((wo) => {
           return (
             <div className="Item__container">
-              <Link to={`/detail/${wo.id}`}>
-                <Card>
+              <Card style={{ height: 450 }}>
+                <div className="Container__img">
                   <Image src={wo.image} size="small" wrapped centered />
+                </div>
+                <Card.Content>
+                  <Card.Header>{wo.title}</Card.Header>
+                  <Card.Meta className="date">
+                    <span className="date">
+                      <span>$</span>
+                      {wo.price}
+                    </span>
+                  </Card.Meta>
                   <Card.Content>
-                    <Card.Header>{wo.title}</Card.Header>
-                    <Card.Meta className="date">
-                      <span className="date">
-                        <span>$</span>
-                        {wo.price}
-                      </span>
-                    </Card.Meta>
-                    <Card.Content>
+                    <Link to={`/detail/${wo.id}`}>
                       <Button size="Medium" inverted color="red">
                         Details
                       </Button>
-                    </Card.Content>
+                    </Link>
                   </Card.Content>
-                </Card>
-              </Link>
+                </Card.Content>
+              </Card>
             </div>
           );
         })}

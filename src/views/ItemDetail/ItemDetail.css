@@ -1,6 +1,14 @@
-.Item__container {
+.Item__container__detail {
   margin-top: 10px;
   max-height: 2500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.card__style {
+  box-shadow: 0 5px 400px rgba(0, 0, 0, 0.5);
 }
 
 .date {

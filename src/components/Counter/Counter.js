@@ -1,10 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Button } from "semantic-ui-react";
 import "./Counter.css";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../CartContex";
 
-function Counter({ min, max, onAdd }) {
+function Counter({ min, max, item }) {
   const [counter, setCounter] = useState(parseInt(min));
+  const [cantidad, setCantidad] = useState(0);
+  // console.log("itemmmmmmm", item);
+  const myContext = useContext(CartContext);
+
+  const onAdd = (counter) => {
+    setCantidad(counter);
+    myContext.addItem({ item, cantidad: counter });
+    //console.log("item2", item);
+    //console.log("cant-count", { cantidad: counter });
+  };
 
   const counterUp = () => {
     setCounter(counter + 1);
@@ -24,6 +35,7 @@ function Counter({ min, max, onAdd }) {
         <Button primary onClick={counterUp} disabled={counter >= max}>
           +
         </Button>
+
         <Link to="/cart">
           <Button
             size="Medium"

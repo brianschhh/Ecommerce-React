@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./ItemList.css";
 import Item from "../Item/Item";
-import { Link } from "react-router-dom";
 
 function ItemList() {
   const [item, setItem] = useState([]);
@@ -18,11 +17,7 @@ function ItemList() {
     <div className="itemList__container">
       <div className="itemlist__grid">
         {item.map((it) => {
-          return (
-            <Link to={`/detail/${it.id}`}>
-              <Item item={it} key={it.id} />
-            </Link>
-          );
+          return <Item item={it} key={it.id} />;
         })}
       </div>
     </div>
