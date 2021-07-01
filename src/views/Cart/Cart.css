@@ -52,6 +52,8 @@ img {
   color: black(224, 7, 7);
   border: 1px solid rgb(224, 7, 7);
   padding: 10px;
+  width: 200px;
+  height: 50px;
 }
 
 .h4__Style {
@@ -67,6 +69,24 @@ img {
 }
 
 .grid__Cart {
+  display: grid;
+  justify-content: center;
+}
+
+.Input__Style {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  width: 600px;
+}
+
+.Style__Form {
+  display: flex;
+  justify-content: center;
+}
+
+.container__ {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

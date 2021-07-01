@@ -36,9 +36,7 @@ function Nav() {
           </Link>
         </li>
       </ul>
-
-      <Icon />
-      <div className="Amount__container">{cantItems}</div>
+      {cantItems !== 0 ? <Icon /> : null}
     </div>
   );
 }

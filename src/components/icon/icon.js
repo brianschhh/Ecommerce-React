@@ -1,25 +1,23 @@
-import React, { Component } from "react";
+import React, { Component, useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import "./icon.css";
+import { useCartContext } from "../../CartContex";
 
-class Icon extends Component {
-  render() {
-    return (
-      <Link to="/cart">
-        <div
-          style={{
-            fontSize: "2em",
-            color: "rgb(224, 7, 7)",
-            marginRight: "20px",
-            marginTop: "10px",
-          }}
-        >
-          <FontAwesomeIcon icon={faShoppingCart} />
-        </div>
+function Icon() {
+  const { cantItems } = useCartContext();
+
+  return (
+    <div className="Icon__Cont">
+      <Link className="Icon__Styles" to="/cart">
+        <FontAwesomeIcon icon={faShoppingCart} />
       </Link>
-    );
-  }
+      <div className="Amount__container">
+        <span>: {cantItems}</span>
+      </div>
+    </div>
+  );
 }
 
 export default Icon;

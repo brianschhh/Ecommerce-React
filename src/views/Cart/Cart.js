@@ -31,6 +31,7 @@ const Cart = () => {
           </Button>
           {cart.length === 0 && <Error />}
         </div>
+
         <div className="grid__Cart">
           {cart.map((item) => {
             return (
@@ -53,14 +54,16 @@ const Cart = () => {
               </div>
             );
           })}
-          <div>
+          <div className="container__">
             {cart.length !== 0 && (
-              <span className="Total__Style">
-                {cart.map((obj) => {
-                  Total = obj.item.price * obj.cantidad + Total;
-                })}
-                Total: us$ {Total.toFixed(2)}
-              </span>
+              <div className="Total__Style">
+                <span>
+                  {cart.map((obj) => {
+                    Total = obj.item.price * obj.cantidad + Total;
+                  })}
+                  Total: us$ {Total.toFixed(2)}
+                </span>
+              </div>
             )}
           </div>
         </div>
