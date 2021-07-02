@@ -8,16 +8,23 @@
 ul {
   display: flex;
   justify-content: space-evenly;
-  width: 100%;
+  width: 90%;
+}
+
+.DarkMode__Style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4px;
 }
 
 .Link__Style {
-  color: rgb(224, 7, 7);
+  color: white(224, 7, 7);
   list-style-type: none;
   text-decoration: none;
 }
 .Link__Style:hover {
-  color: red;
+  color: white;
 }
 
 li:hover {
@@ -26,4 +33,5 @@ li:hover {
 
 li {
   transition: all 0.2s ease-out;
+  font-size: 18px;
 }

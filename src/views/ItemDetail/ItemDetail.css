@@ -1,9 +1,8 @@
 .Item__container__detail {
-  margin-top: 10px;
   max-height: 2500px;
   display: flex;
   justify-content: center;
-  align-items: center;
+
   text-align: center;
 }
 

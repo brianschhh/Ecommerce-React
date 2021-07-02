@@ -7,6 +7,7 @@ export const useCartContext = () => useContext(CartContext);
 export const CartProvider = ({ children, defaultCart = [] }) => {
   const [cart, setCart] = useState(defaultCart);
   const [cantItems, setcantItems] = useState(0);
+  const [isDarkMode, setIsDarkMode] = useState(() => false);
 
   function addItem(item, qnt) {
     if (cart.length !== 0) {
@@ -31,9 +32,22 @@ export const CartProvider = ({ children, defaultCart = [] }) => {
     setcantItems(0);
   }
 
+  function changeState(isDarkMode) {
+    setIsDarkMode(isDarkMode);
+    console.log("contex-isDarkMode", isDarkMode);
+  }
+
   return (
     <CartContext.Provider
-      value={{ cart, cantItems, addItem, removeItem, clearCart }}
+      value={{
+        cart,
+        cantItems,
+        isDarkMode,
+        changeState,
+        addItem,
+        removeItem,
+        clearCart,
+      }}
     >
       {children}
     </CartContext.Provider>

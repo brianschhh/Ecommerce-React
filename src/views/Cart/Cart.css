@@ -7,7 +7,7 @@ h1 {
   display: flex;
   margin-top: 5px;
   justify-content: center;
-  border: 1px solid red;
+
   width: 600px;
 }
 
@@ -27,6 +27,14 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.style__text_black {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
 }
 
 .Container__Icon {
@@ -50,7 +58,20 @@ img {
   font-size: 20px;
   text-align: center;
   color: black(224, 7, 7);
-  border: 1px solid rgb(224, 7, 7);
+  border: 1px solid black;
+  padding: 10px;
+  width: 200px;
+  height: 50px;
+}
+
+.Total_Style_Black {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  text-align: center;
+  color: white(224, 7, 7);
+  border: 1px solid white;
   padding: 10px;
   width: 200px;
   height: 50px;

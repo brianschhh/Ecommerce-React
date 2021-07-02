@@ -8,7 +8,7 @@ function Error() {
     <div className="Error__style">
       <div className="Button__container">
         <Link to="/">
-          <Button size="big" inverted color="red" style={{ marginTop: "5px" }}>
+          <Button size="big" color="black" style={{ marginTop: "5px" }}>
             the cart is empty, go shopping
           </Button>
         </Link>

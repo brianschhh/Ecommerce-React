@@ -21,7 +21,7 @@ function App() {
   return (
     <CartProvider>
       <Router>
-        <div className="App__container">
+        <div>
           <Header />
           <Nav />
           <Switch>
