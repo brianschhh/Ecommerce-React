@@ -38,7 +38,7 @@ const Cart = () => {
               return (
                 <div
                   style={{ backgroundColor: "black" }}
-                  className="Container__all"
+                  className="Container__all__Black"
                 >
                   <div className="Container__Card">
                     <img src={item.item.image} alt="" />
@@ -78,7 +78,7 @@ const Cart = () => {
         </div>
       ) : (
         <div>
-          <div>
+          <div className="backGround__Img">
             <div className="container__h4">
               <h4 className="h4__Style">Cart</h4>
             </div>

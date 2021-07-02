@@ -3,11 +3,19 @@ h1 {
   justify-content: center;
 }
 
+.Container__all__Black {
+  display: flex;
+  margin-top: 5px;
+  justify-content: center;
+  box-shadow: 0 15px 40px rgba(158, 0, 0, 0.5);
+  width: 600px;
+}
+
 .Container__all {
   display: flex;
   margin-top: 5px;
   justify-content: center;
-
+  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.5);
   width: 600px;
 }
 
@@ -46,7 +54,6 @@ img {
 }
 
 .container__h4 {
-  background-color: black;
   display: flex;
   justify-content: center;
 }
@@ -58,7 +65,7 @@ img {
   font-size: 20px;
   text-align: center;
   color: black(224, 7, 7);
-  border: 1px solid black;
+  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.5);
   padding: 10px;
   width: 200px;
   height: 50px;
@@ -71,14 +78,14 @@ img {
   font-size: 20px;
   text-align: center;
   color: white(224, 7, 7);
-  border: 1px solid white;
+  box-shadow: 0 5px 40px rgba(158, 0, 0, 0.5);
   padding: 10px;
   width: 200px;
   height: 50px;
 }
 
 .h4__Style {
-  color: rgb(255, 255, 255);
+  color: white;
   font-family: "Dela Gothic One", cursive;
   font-size: 40px;
   height: 100%;
@@ -110,4 +117,10 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.backGround__Img {
+  background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20201010/pngtree-black-friday-seamless-background-illustration-with-sale-tag-shopping-bag-and-image_407934.jpg");
+  object-fit: center;
+  object-position: center;
 }

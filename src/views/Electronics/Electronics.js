@@ -33,8 +33,8 @@ function Electronics() {
             {isLoading ? <Spinner /> : null}
             {electro.map((el) => {
               return (
-                <div className="Item__container">
-                  <Card style={{ height: 450 }}>
+                <div className="Item__container__Dark">
+                  <Card style={{ height: 450, width: 350 }}>
                     <div
                       style={{ backgroundColor: "black" }}
                       className="Container__img"
@@ -75,7 +75,7 @@ function Electronics() {
             {electro.map((el) => {
               return (
                 <div className="Item__container">
-                  <Card style={{ height: 450 }}>
+                  <Card style={{ height: 450, width: 350 }}>
                     <div className="Container__img">
                       <Image src={el.image} size="small" wrapped centered />
                     </div>

@@ -3,6 +3,14 @@
   justify-content: center;
 }
 
+.Item__container__Dark {
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 5px 40px rgba(158, 0, 0, 0.5);
+  text-align: center;
+  transition: all 0.2s ease-out;
+}
+
 .itemlist__grid {
   padding: 10px;
   display: grid;

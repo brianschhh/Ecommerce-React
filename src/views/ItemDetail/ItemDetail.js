@@ -31,15 +31,19 @@ function ItemDetail({ match }) {
         <div
           style={{
             backgroundColor: "black",
-            height: "900px",
+            height: "1200px",
           }}
-          className="Item__container__detail"
         >
-          <div className="card__style">
+          <div className="Item__container__DarkDetail ">
             {isLoading ? <Spinner /> : null}
-            <Card>
+            <Card
+              style={{
+                width: 400,
+                boxShadow: "0 5px 40px rgba(158, 0, 0, 0.5)",
+              }}
+            >
+              {" "}
               <Image src={items.image} size="big" wrapped centered />
-
               <Card.Content style={{ backgroundColor: "black" }}>
                 <Card.Header style={{ color: "white" }}>
                   {items.title}
@@ -62,7 +66,12 @@ function ItemDetail({ match }) {
         <div className="Item__container__detail">
           <div className="card__style">
             {isLoading ? <Spinner /> : null}
-            <Card>
+            <Card
+              style={{
+                width: 400,
+                boxShadow: "0 5px 40px rgba(0, 0, 0, 0.5)",
+              }}
+            >
               <Image src={items.image} size="big" wrapped centered />
               <Card.Content>
                 <Card.Header>{items.title}</Card.Header>
