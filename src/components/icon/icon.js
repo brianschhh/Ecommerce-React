@@ -14,7 +14,7 @@ function Icon() {
         <FontAwesomeIcon icon={faShoppingCart} />
       </Link>
       <div className="Amount__container">
-        <span>: {cantItems}</span>
+        <span> {cantItems}</span>
       </div>
     </div>
   );

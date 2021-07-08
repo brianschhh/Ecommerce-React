@@ -17,7 +17,7 @@ function Nav() {
           color="white"
           style={{ marginTop: "5px" }}
         >
-          home
+          Home
         </Button>
       </Link>
       <div className="DarkMode__Style">
@@ -27,12 +27,12 @@ function Nav() {
         <li></li>
         <li>
           <Link className="Link__Style" to="/electronics">
-            electronic
+            Electronic
           </Link>
         </li>
         <li>
           <Link className="Link__Style" to="/jewelery">
-            jewelery
+            Jewelery
           </Link>
         </li>
         <li>
