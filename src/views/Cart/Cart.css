@@ -97,8 +97,8 @@ img {
 }
 
 .grid__Cart {
-  display: grid;
-  justify-content: center;
+  display: flex;
+  justify-content: space-around;
 }
 
 .Input__Style {
@@ -123,4 +123,8 @@ img {
   background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20201010/pngtree-black-friday-seamless-background-illustration-with-sale-tag-shopping-bag-and-image_407934.jpg");
   object-fit: center;
   object-position: center;
+}
+
+.backGround__Img__Black {
+  box-shadow: 0 5px 40px rgba(158, 0, 0, 0.5);
 }

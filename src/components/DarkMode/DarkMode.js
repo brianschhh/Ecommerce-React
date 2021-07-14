@@ -5,7 +5,6 @@ import { CartContext } from "../../CartContex";
 function DarkMode() {
   const myContext = useContext(CartContext);
   const [isDarkMode, setIsDarkMode] = useState(() => false);
-  console.log("isDarkMode", isDarkMode);
   const Change = () => {
     myContext.changeState(isDarkMode);
   };

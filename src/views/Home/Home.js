@@ -1,5 +1,4 @@
 import React from "react";
-import DarkMode from "../../components/DarkMode/DarkMode";
 import ItemList from "../../components/ItemList/ItemList";
 import { useCartContext } from "../../CartContex";
 import { db } from "../../Firebase";
