@@ -34,7 +34,6 @@ export const CartProvider = ({ children, defaultCart = [] }) => {
 
   function changeState(isDarkMode) {
     setIsDarkMode(isDarkMode);
-    console.log("contex-isDarkMode", isDarkMode);
   }
 
   return (

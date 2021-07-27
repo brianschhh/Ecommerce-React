@@ -1,4 +1,3 @@
-import React, { useContext } from "react";
 import "./Cart.css";
 import { useCartContext } from "../../CartContex";
 import { Button } from "semantic-ui-react";
@@ -9,8 +8,6 @@ import FormCart from "../../components/Form/Form";
 
 const Cart = () => {
   const { cart, removeItem, clearCart, isDarkMode } = useCartContext();
-
-  // console.log("cart en cart", cart);
   let Total = 0;
 
   return (
@@ -39,6 +36,7 @@ const Cart = () => {
               {cart.map((item) => {
                 return (
                   <div
+                    key={item.id}
                     style={{ backgroundColor: "black" }}
                     className="Container__all__Black"
                   >
@@ -72,7 +70,7 @@ const Cart = () => {
             {cart.length !== 0 && (
               <div className="Total__Style">
                 <span style={{ color: "white" }} className="Total_Style_Black">
-                  {cart.map((obj) => {
+                  {cart.forEach((obj) => {
                     Total = obj.item.price * obj.cantidad + Total;
                   })}
                   Total: us$ {Total.toFixed(2)}
@@ -104,7 +102,7 @@ const Cart = () => {
             <div>
               {cart.map((item) => {
                 return (
-                  <div className="Container__all">
+                  <div className="Container__all" key={item.id}>
                     <div className="Container__Card">
                       <img src={item.item.image} alt="" />
                       <div className="style__text">{item.item.title}</div>
@@ -135,7 +133,7 @@ const Cart = () => {
             {cart.length !== 0 && (
               <div className="Total__Style">
                 <span>
-                  {cart.map((obj) => {
+                  {cart.forEach((obj) => {
                     Total = obj.item.price * obj.cantidad + Total;
                   })}
                   Total: us$ {Total.toFixed(2)}

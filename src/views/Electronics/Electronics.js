@@ -1,10 +1,10 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
 import "./Electronics.css";
 import { Card, Image, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../CartContex";
 import Spinner from "../../components/Spinner/Spinner";
+import { db } from "../../Firebase";
 
 function Electronics() {
   const { isDarkMode } = useCartContext();
@@ -12,16 +12,23 @@ function Electronics() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios(
-        "https://fakestoreapi.com/products/category/electronics"
-      );
-      setElectro(result.data);
-      setIsLoading(false);
-    };
-    fetchData();
-  }, []);
+    const docs = [];
 
+    db.collection("items")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          docs.push({
+            ...doc.data(),
+            id: doc.id,
+            category: doc.data().category,
+          });
+          const filteredItem = docs.filter((x) => x.category === "Electronic");
+          setElectro(filteredItem);
+        });
+        setIsLoading(false);
+      });
+  }, []);
   return (
     <div>
       {isDarkMode ? (
@@ -33,7 +40,7 @@ function Electronics() {
             {isLoading ? <Spinner /> : null}
             {electro.map((el) => {
               return (
-                <div className="Item__container__Dark">
+                <div className="Item__container__Dark" key={el.id}>
                   <Card style={{ height: 450, width: 350 }}>
                     <div
                       style={{ backgroundColor: "black" }}
@@ -43,8 +50,7 @@ function Electronics() {
                     </div>
                     <Card.Content style={{ backgroundColor: "black" }}>
                       <Card.Header
-                        style={{ backgroundColor: "black" }}
-                        style={{ color: "white" }}
+                        style={{ backgroundColor: "black", color: "white" }}
                       >
                         {el.title}
                       </Card.Header>
@@ -74,7 +80,7 @@ function Electronics() {
             {isLoading ? <Spinner /> : null}
             {electro.map((el) => {
               return (
-                <div className="Item__container">
+                <div className="Item__container" key={el.id}>
                   <Card style={{ height: 450, width: 350 }}>
                     <div className="Container__img">
                       <Image src={el.image} size="small" wrapped centered />

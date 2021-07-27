@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
-import { Button, Checkbox, Form, Input } from "semantic-ui-react";
+import React, { useState } from "react";
+import { Button, Form, Input } from "semantic-ui-react";
 import { useCartContext } from "../../CartContex";
 import { db } from "../../Firebase";
 
@@ -15,19 +15,18 @@ const FormCart = () => {
   const [order, setOrder] = useState([]);
 
   const addOrEdit = async (object) => {
-    console.log("obj", object);
     await db.collection("ordenes").doc().set(object);
 
-    console.log("nuevo producto agregado!");
+    cart.forEach((car) => {
+      alert("Compra Realizada!, si numero de orden es: " + car.item.id);
+      console.log("nuevo producto agregado!", car.item.id);
+    });
   };
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;
-    //console.log(name, value);
-    //Copiamos los valores actuales, y el input [name] que estemos actualizando, le colocamos el valor actual que estemos tipeando
     setValues({ ...values, [name]: value });
     setOrder({ values, product: cart });
-    console.log(values);
   };
 
   const handleOnSubmit = (e) => {

@@ -1,10 +1,10 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
 import "./WomenCloth.css";
 import { Card, Image, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../CartContex";
 import Spinner from "../../components/Spinner/Spinner";
+import { db } from "../../Firebase";
 
 function WomenCloth() {
   const { isDarkMode } = useCartContext();
@@ -12,14 +12,22 @@ function WomenCloth() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios(
-        "https://fakestoreapi.com/products/category/women's%20clothing"
-      );
-      setWomencloth(result.data);
-      setIsLoading(false);
-    };
-    fetchData();
+    const docs = [];
+
+    db.collection("items")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          docs.push({
+            ...doc.data(),
+            id: doc.id,
+            category: doc.data().category,
+          });
+          const filteredItem = docs.filter((x) => x.category === "Women-Cloth");
+          setWomencloth(filteredItem);
+        });
+        setIsLoading(false);
+      });
   }, []);
 
   return (
@@ -33,7 +41,7 @@ function WomenCloth() {
             {isLoading ? <Spinner /> : null}
             {womencloth.map((wc) => {
               return (
-                <div className="Item__container__Dark">
+                <div className="Item__container__Dark" key={wc.id}>
                   <Card style={{ height: 450, width: 350 }}>
                     <div
                       style={{ backgroundColor: "black" }}
@@ -43,8 +51,7 @@ function WomenCloth() {
                     </div>
                     <Card.Content style={{ backgroundColor: "black" }}>
                       <Card.Header
-                        style={{ backgroundColor: "black" }}
-                        style={{ color: "white" }}
+                        style={{ backgroundColor: "black", color: "white" }}
                       >
                         {wc.title}
                       </Card.Header>
@@ -74,7 +81,7 @@ function WomenCloth() {
             {isLoading ? <Spinner /> : null}
             {womencloth.map((wc) => {
               return (
-                <div className="Item__container">
+                <div className="Item__container" key={wc.id}>
                   <Card style={{ height: 450, width: 350 }}>
                     <div className="Container__img">
                       <Image src={wc.image} size="small" wrapped centered />

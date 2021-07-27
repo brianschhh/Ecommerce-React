@@ -1,4 +1,3 @@
-import React, { useContext } from "react";
 import "./Nav.css";
 import { Link } from "react-router-dom";
 import { Button } from "semantic-ui-react";

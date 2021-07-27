@@ -7,16 +7,11 @@ import { useCartContext } from "../../CartContex";
 
 function Counter({ min, max, item }) {
   const [counter, setCounter] = useState(parseInt(min));
-  const [cantidad, setCantidad] = useState(0);
-  // console.log("itemmmmmmm", item);
   const myContext = useContext(CartContext);
   const { isDarkMode } = useCartContext();
 
   const onAdd = (counter) => {
-    setCantidad(counter);
     myContext.addItem({ item, cantidad: counter });
-    //console.log("item2", item);
-    //console.log("cant-count", { cantidad: counter });
   };
 
   const counterUp = () => {

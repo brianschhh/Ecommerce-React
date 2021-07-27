@@ -18,10 +18,7 @@ function Item({ item }) {
               <Image src={item.image} size="small" wrapped centered />
             </div>
             <Card.Content style={{ backgroundColor: "black" }}>
-              <Card.Header
-                style={{ backgroundColor: "black" }}
-                style={{ color: "white" }}
-              >
+              <Card.Header style={{ backgroundColor: "black", color: "white" }}>
                 {item.title}
               </Card.Header>
               <Card.Meta className="date">

@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import "./ItemList.css";
 import Item from "../Item/Item";
 import Spinner from "../Spinner/Spinner";
+import { db } from "../../Firebase";
 
 function ItemList() {
   const [item, setItem] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios("https://fakestoreapi.com/products");
-      setItem(result.data);
-      setIsLoading(false);
-    };
-    fetchData();
+    const docs = [];
+    db.collection("items")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          docs.push({ ...doc.data(), id: doc.id });
+        });
+        setItem(docs);
+        setIsLoading(false);
+      });
   }, []);
 
   return (
