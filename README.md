@@ -12,7 +12,7 @@ Y listo, así de fácil.
 Funcionalidades
 E-COMMERCE es una Single Page Application que simula ser un e-commerce. Este mismo goza de:
 
-Un carro accesible desde cualquier lugar de la aplicación en el que persisten los items que se agreguen. a menos que se refresque
+Un carro accesible desde cualquier lugar de la aplicación en el que persisten los items que se agreguen, a menos que se refresque.
 Una navegación fácil y ágil entre todas las partes del e-commerce, con poco retraso entre cada cambio de vista.
 Un buen flujo de compra, con botones grandes y lindos y fáciles de apretar.
 Listado de todos los Items disponibles, por categorías, y cada uno por separado, mostrando todos sus detalles.
