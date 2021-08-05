@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Ecommerce-React/static/css/main.8368080c.chunk.css",
+    "main.js": "/Ecommerce-React/static/js/main.4ec9146e.chunk.js",
+    "main.js.map": "/Ecommerce-React/static/js/main.4ec9146e.chunk.js.map",
+    "runtime-main.js": "/Ecommerce-React/static/js/runtime-main.396d6072.js",
+    "runtime-main.js.map": "/Ecommerce-React/static/js/runtime-main.396d6072.js.map",
+    "static/css/2.b5fd0385.chunk.css": "/Ecommerce-React/static/css/2.b5fd0385.chunk.css",
+    "static/js/2.ea46e7c1.chunk.js": "/Ecommerce-React/static/js/2.ea46e7c1.chunk.js",
+    "static/js/2.ea46e7c1.chunk.js.map": "/Ecommerce-React/static/js/2.ea46e7c1.chunk.js.map",
+    "index.html": "/Ecommerce-React/index.html",
+    "static/css/2.b5fd0385.chunk.css.map": "/Ecommerce-React/static/css/2.b5fd0385.chunk.css.map",
+    "static/css/main.8368080c.chunk.css.map": "/Ecommerce-React/static/css/main.8368080c.chunk.css.map",
+    "static/js/2.ea46e7c1.chunk.js.LICENSE.txt": "/Ecommerce-React/static/js/2.ea46e7c1.chunk.js.LICENSE.txt",
+    "static/media/semantic.min.css": "/Ecommerce-React/static/media/outline-icons.ddae9b1b.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.396d6072.js",
+    "static/css/2.b5fd0385.chunk.css",
+    "static/js/2.ea46e7c1.chunk.js",
+    "static/css/main.8368080c.chunk.css",
+    "static/js/main.4ec9146e.chunk.js"
+  ]
+}
